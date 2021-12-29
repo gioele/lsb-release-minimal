@@ -29,7 +29,7 @@ show_release=false
 show_codename=false
 short_format=false
 
-options=$(getopt --name lsb_release -o hvidrcas -l help,version,id,description,release,codename,all,short -- "$@") || help
+options=$(getopt --name lsb_release -o hvidrcas -l help,version,id,description,release,codename,all,short -- "$@") || exit 2
 eval set -- "$options"
 while [ $# -gt 0 ] ; do
 	case "$1" in
@@ -41,7 +41,7 @@ while [ $# -gt 0 ] ; do
 		-c|--codename) show_codename=true ;;
 		-a|--all) show_id=true ; show_desc=true ; show_release=true ; show_codename=true ;;
 		-s|--short) short_format=true ;;
-		*) break ;;
+		*) break  ;;
 	esac
 	shift
 done
