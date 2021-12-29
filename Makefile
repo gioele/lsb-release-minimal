@@ -1,5 +1,5 @@
 INSTALL=install
-prefix=/usr/local
+prefix=/usr
 
 all: ;
 
