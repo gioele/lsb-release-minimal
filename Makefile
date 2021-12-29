@@ -1,8 +1,9 @@
+INSTALL=install
 prefix=/usr/local
 
 all: ;
 
 install:
-	install -D lsb_release $(prefix)/bin
+	$(INSTALL) -D lsb_release $(DESTDIR)$(prefix)/bin
 
 .PHONE: all install
