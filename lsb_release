@@ -64,6 +64,7 @@ display_line () {
 
 # Mimic the output of Debian's Python-based lsb_release
 # Capitalize ID
+: ${ID=""}
 ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
 
 # Generate minimal standard-conform output
@@ -74,13 +75,13 @@ if $show_id ; then
 fi
 
 if $show_desc ; then
-	display_line "Description" "$PRETTY_NAME"
+	display_line "Description" "${PRETTY_NAME-n/a}"
 fi
 
 if $show_release ; then
-	display_line "Release" "$VERSION_ID"
+	display_line "Release" "${VERSION_ID-n/a}"
 fi
 
 if $show_codename ; then
-	display_line "Codename" "$VERSION_CODENAME"
+	display_line "Codename" "${VERSION_CODENAME-n/a}"
 fi
