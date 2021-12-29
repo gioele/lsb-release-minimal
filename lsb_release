@@ -66,6 +66,16 @@ display_line () {
 # Capitalize ID
 : ${ID=""}
 ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
+# Use NAME if set and different from ID only in capitalization.
+if [ "${NAME-x}" != "x" ] ; then
+	lower_case_id=$(echo "$ID" | tr a-z A-Z)
+	lower_case_name=$(echo "$NAME" | tr a-z A-Z)
+	if [ "${lower_case_id}" = "${lower_case_name}" ] ; then
+		ID="$NAME"
+	fi
+fi
+# Make sure ID is not empty.
+[ -z "$ID" ] && ID="n/a"
 
 # Generate minimal standard-conform output
 echo "No LSB modules are available." >& 2
