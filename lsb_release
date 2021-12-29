@@ -66,7 +66,7 @@ display_line () {
 ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
 
 # Generate minimal standard-conform output
-echo "No LSB modules are available."
+echo "No LSB modules are available." >& 2
 
 if $show_id ; then
 	display_line "Distributor ID:" "$ID"
