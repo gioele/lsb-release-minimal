@@ -53,7 +53,7 @@ display_line () {
 	if $short_format ; then
 		echo "$value"
 	else
-		echo "$label $value"
+		echo "$label:\t$value"
 	fi
 }
 
@@ -69,17 +69,17 @@ ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
 echo "No LSB modules are available." >& 2
 
 if $show_id ; then
-	display_line "Distributor ID:" "$ID"
+	display_line "Distributor ID" "$ID"
 fi
 
 if $show_desc ; then
-	display_line "Description:   " "$PRETTY_NAME"
+	display_line "Description" "$PRETTY_NAME"
 fi
 
 if $show_release ; then
-	display_line "Release:       " "$VERSION_ID"
+	display_line "Release" "$VERSION_ID"
 fi
 
 if $show_codename ; then
-	display_line "Codename:      " "$VERSION_CODENAME"
+	display_line "Codename" "$VERSION_CODENAME"
 fi
