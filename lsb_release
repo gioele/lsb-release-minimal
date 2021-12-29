@@ -60,6 +60,7 @@ display_line () {
 # Load release info from standard identification data files
 [ -f /usr/lib/os-release ] && . /usr/lib/os-release
 [ -f /etc/os-release ] && . /etc/os-release
+[ "${LSB_OS_RELEASE-x}" != "x" ] && [ -f "$LSB_OS_RELEASE" ] && . $LSB_OS_RELEASE
 
 # Mimic the output of Debian's Python-based lsb_release
 # Capitalize ID
