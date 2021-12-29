@@ -1,0 +1,26 @@
+Source: lsb-release-minimal
+Section: misc
+Priority: optional
+Maintainer: Gioele Barabucci <gioele@svario.it>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Vcs-Browser: https://github.com/gioele/lsb-release-minimal
+Vcs-Git: https://github.com/gioele/lsb-release-minimal.git
+Rules-Requires-Root: no
+
+Package: lsb-release-minimal
+Provides: lsb-release
+Conflicts: lsb-release
+Replaces: lsb-release
+Architecture: all
+Depends: ${misc:Depends}
+Description: Linux Standard Base version reporting utility (minimal implementation)
+ The Linux Standard Base (http://www.linuxbase.org/) is a standard
+ core system that third-party applications written for Linux can
+ depend upon.
+ .
+ The lsb-release command is a simple tool to help identify the Linux
+ distribution being used and its compliance with the Linux Standard Base.
+ .
+ This package contains a bare-bones implementation that uses the
+ information in /etc/os-release instead of relying on LSB packages.

@@ -1,0 +1,5 @@
+lsb-release-minimal (0.1-1) UNRELEASED; urgency=medium
+
+  * Initial upstream release (Closes: #1002831)
+
+ -- Gioele Barabucci <gioele@svario.it>  Wed, 29 Dec 2021 14:00:36 +0100
