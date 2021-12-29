@@ -61,6 +61,10 @@ display_line () {
 [ -f /usr/lib/os-release ] && . /usr/lib/os-release
 [ -f /etc/os-release ] && . /etc/os-release
 
+# Mimic the output of Debian's Python-based lsb_release
+# Capitalize ID
+ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
+
 # Generate minimal standard-conform output
 echo "No LSB modules are available."
 
