@@ -64,7 +64,7 @@ display_line () {
 
 # Mimic the output of Debian's Python-based lsb_release
 # Capitalize ID
-: ${ID=""}
+: "${ID=}"
 ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
 # Use NAME if set and different from ID only in capitalization.
 if [ "${NAME-x}" != "x" ] ; then
