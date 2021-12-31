@@ -10,4 +10,4 @@ check:
 install:
 	$(INSTALL) -D lsb_release $(DESTDIR)$(prefix)/bin/lsb_release
 
-.PHONE: all check install
+.PHONY: all check install
