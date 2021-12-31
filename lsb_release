@@ -53,7 +53,7 @@ display_line () {
 	if $short_format ; then
 		echo "$value"
 	else
-		echo "$label:\t$value"
+		printf "%s:\t%s\n" "$label" "$value"
 	fi
 }
 
