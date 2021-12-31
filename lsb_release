@@ -53,17 +53,29 @@ display_line () {
 	if $short_format ; then
 		echo "$value"
 	else
-		echo "$label:\t$value"
+		printf "%s:\t%s\n" "$label" "$value"
 	fi
 }
 
 # Load release info from standard identification data files
 [ -f /usr/lib/os-release ] && . /usr/lib/os-release
 [ -f /etc/os-release ] && . /etc/os-release
+[ "${LSB_OS_RELEASE-x}" != "x" ] && [ -f "$LSB_OS_RELEASE" ] && . "$LSB_OS_RELEASE"
 
 # Mimic the output of Debian's Python-based lsb_release
 # Capitalize ID
+: "${ID=}"
 ID="$(echo "$ID" | cut -c1 | tr a-z A-Z)$(echo "$ID" | cut -c2-)"
+# Use NAME if set and different from ID only in capitalization.
+if [ "${NAME-x}" != "x" ] ; then
+	lower_case_id=$(echo "$ID" | tr a-z A-Z)
+	lower_case_name=$(echo "$NAME" | tr a-z A-Z)
+	if [ "${lower_case_id}" = "${lower_case_name}" ] ; then
+		ID="$NAME"
+	fi
+fi
+# Make sure ID is not empty.
+[ -z "$ID" ] && ID="n/a"
 
 # Generate minimal standard-conform output
 echo "No LSB modules are available." >& 2
@@ -73,13 +85,13 @@ if $show_id ; then
 fi
 
 if $show_desc ; then
-	display_line "Description" "$PRETTY_NAME"
+	display_line "Description" "${PRETTY_NAME-n/a}"
 fi
 
 if $show_release ; then
-	display_line "Release" "$VERSION_ID"
+	display_line "Release" "${VERSION_ID-n/a}"
 fi
 
 if $show_codename ; then
-	display_line "Codename" "$VERSION_CODENAME"
+	display_line "Codename" "${VERSION_CODENAME-n/a}"
 fi
