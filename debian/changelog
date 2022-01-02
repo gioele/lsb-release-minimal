@@ -1,3 +1,13 @@
+lsb-release-minimal (0.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release v0.2
+  * debian/control: Add Homepage field
+  * debian/control: Update Standards-Version (no changes)
+  * debian/gbp: Use same branch settings for all commands
+  * debian/watch: Fix filenamemangle
+
+ -- Gioele Barabucci <gioele@svario.it>  Sun, 02 Jan 2022 14:14:08 +0100
+
 lsb-release-minimal (0.1-1) UNRELEASED; urgency=medium
 
   * Initial upstream release (Closes: #1002831)
