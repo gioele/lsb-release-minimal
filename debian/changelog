@@ -8,7 +8,7 @@ lsb-release-minimal (0.2-1) UNRELEASED; urgency=medium
 
  -- Gioele Barabucci <gioele@svario.it>  Sun, 02 Jan 2022 14:14:08 +0100
 
-lsb-release-minimal (0.1-1) UNRELEASED; urgency=medium
+lsb-release-minimal (0.1-1) experimental; urgency=medium
 
   * Initial upstream release (Closes: #1002831)
 
