@@ -1,25 +1,5 @@
-lsb-release-minimal (0.2-2) UNRELEASED; urgency=medium
-
-  * debian/control: Move Git repo to salsa.debian.org
-  * debian/watch: Change watch URL to salsa.debian.org
-  * debian/copyright: Align with dh_make template
-  * debian/copyright: Update copyright year to 2022
-  * debian/changelog: Fix previous releases
-
- -- Gioele Barabucci <gioele@svario.it>  Mon, 03 Jan 2022 11:12:20 +0100
-
 lsb-release-minimal (0.2-1) experimental; urgency=medium
-
-  * New upstream release v0.2
-  * debian/control: Add Homepage field
-  * debian/control: Update Standards-Version (no changes)
-  * debian/gbp: Use same branch settings for all commands
-  * debian/watch: Fix filenamemangle
-
- -- Gioele Barabucci <gioele@svario.it>  Sun, 02 Jan 2022 14:14:08 +0100
-
-lsb-release-minimal (0.1-1) experimental; urgency=medium
 
   * Initial upstream release (Closes: #1002831)
 
- -- Gioele Barabucci <gioele@svario.it>  Wed, 29 Dec 2021 14:00:36 +0100
+ -- Gioele Barabucci <gioele@svario.it>  Sat, 05 Feb 2022 10:06:36 +0100
